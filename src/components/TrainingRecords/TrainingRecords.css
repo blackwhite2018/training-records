@@ -1,0 +1,13 @@
+html,
+body {
+    margin: 0;
+}
+
+.form {
+    display: flex;
+}
+
+.form__group {
+    display: flex;
+    flex-direction: column;
+}
