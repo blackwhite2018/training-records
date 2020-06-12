@@ -1,0 +1,2 @@
+body,html{margin:0}*{box-sizing:border-box}td{border:0}.container{flex-direction:column;width:400px;margin:2rem auto}.container,.form{display:flex}.form__group{display:flex;flex-direction:column;margin-right:1rem}.form__input{font-size:1rem;line-height:1.2rem;padding:0 25px;width:200px}.form__input,.form__submit{height:40px;border-radius:10px;border:1px solid #000;background:transparent}.form__submit{align-self:flex-end;padding:0 15px}.table{border-collapse:collapse}.tbody{border:1px solid #000}
+/*# sourceMappingURL=main.1118090d.chunk.css.map */
