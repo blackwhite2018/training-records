@@ -37,11 +37,10 @@ const TrainingRecords = () => {
     };
 
     const updateRecord = record => {
-        setEditRecord(record);
+        setEditRecord(null);
     };
 
     const handleOption = (date, option) => {
-        console.log(date, option);
         switch (option) {
             case 'edit':
                 let position = -1;

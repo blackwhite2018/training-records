@@ -14,7 +14,10 @@ const Row = ({ data, handleOption }) => {
 };
 
 Row.propTypes = {
-
+    props: PropTypes.shape({
+        data: PropTypes.object.isRequired,
+        handleOption: PropTypes.func.isRequired
+    })
 }
 
 export default Row;

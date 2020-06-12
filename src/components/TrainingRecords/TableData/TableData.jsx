@@ -6,32 +6,32 @@ import Row from './Row/Row';
 const TableData = ({ records, handleOption }) => {
     const headers = ['Дата (дд.мм.гг)', 'Пройдено км', 'Действия'];
 
-    const headersIds = headers.map(header => {
-        return {
+    const headersIds = headers.map(header => (
+        {
             _id: shortid.generate(),
             value: header
-        };
-    });
+        }
+    ));
 
-    const recordsIds = records.map(record => {
-        return {
+    const recordsIds = records.map(record => (
+        {
             _id: shortid.generate(),
             ...record
-        };
-    });
+        }
+    ));
 
     return (
-        <table>
-            <thead>
-                <tr>
+        <table className="table">
+            <thead className="thead">
+                <tr className="table__row">
                     {
                         headersIds.map(({ _id, value }) => (
-                            <th key={_id}>{value}</th>
+                            <th className="thead__data" key={_id}>{value}</th>
                         ))
                     }
                 </tr>
             </thead>
-            <tbody>
+            <tbody className="tbody">
                 {
                     recordsIds.map(({ _id, date, number }) => {
                         return (

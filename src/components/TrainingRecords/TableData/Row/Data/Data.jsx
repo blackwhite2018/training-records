@@ -8,9 +8,9 @@ const Data = ({ data: { date, number }, handleOption }) => {
 
     return (
         <>
-            <td>{date.split('.').reverse().join('.')}</td>
-            <td>{number}</td>
-            <td>
+            <td className="tbody__data">{date.split('.').reverse().join('.')}</td>
+            <td className="tbody__data">{number}</td>
+            <td className="tbody__data">
                 <button data-change="edit" onClick={handleClick}>edit</button>
                 <button data-change="rm" onClick={handleClick}>remove</button>
             </td>

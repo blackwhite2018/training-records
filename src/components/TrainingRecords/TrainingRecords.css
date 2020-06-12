@@ -3,6 +3,21 @@ body {
     margin: 0;
 }
 
+* {
+    box-sizing: border-box;
+}
+
+td {
+    border: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin: 2rem auto;
+}
+
 .form {
     display: flex;
 }
@@ -10,4 +25,33 @@ body {
 .form__group {
     display: flex;
     flex-direction: column;
+    margin-right: 1rem;
+}
+
+.form__input {
+    font-size: 1rem;
+    line-height: 1.2rem;
+    padding: 0 25px;
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #000;
+    background: rgba(0, 0, 0, 0);
+}
+
+.form__submit {
+    height: 40px;
+    border: 1px solid #000;
+    background: rgba(0, 0, 0, 0);
+    align-self: flex-end;
+    border-radius: 10px;
+    padding: 0 15px;
+}
+
+.table {
+    border-collapse: collapse;
+}
+
+.tbody {
+    border: 1px solid #000;
 }

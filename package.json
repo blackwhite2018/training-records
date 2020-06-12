@@ -1,5 +1,6 @@
 {
   "name": "training-records",
+  "homepage": "https://blackwhite2018.github.io/training-records",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
