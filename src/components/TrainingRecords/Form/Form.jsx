@@ -1,19 +1,22 @@
 import React, { useState, useRef } from 'react';
 
-const Form = ({ handleAddRecord, editRecord, updateRecord }) => {
-    const [field, setField] = useState(editRecord);
-    const { date, number } = field;
-    //const date = useRef(editRecord === null ? '' : editRecord.date);
-    //const number = useRef(0);
+const Form = ({ handleAddRecord, editRecord = null, updateRecord }) => {
+    const [field, setField] = useState({
+        date: '',
+        number: 0
+    });
+    const field1 = useRef('');
+    const field2 = useRef(0);
+    let { date, number } = field;
 
     const handleSubmit = evt => {
         evt.preventDefault();
         handleAddRecord({
-            date: date.current.value,
-            number: number.current.value
+            date: field1.current.value,
+            number: field2.current.value
         });
-        date.current.value = '';
-        number.current.value = 0;
+        field1.current.value = '';
+        field2.current.value = 0;
     };
 
     const handleChange = ({ target }) => {
@@ -23,7 +26,6 @@ const Form = ({ handleAddRecord, editRecord, updateRecord }) => {
                 [target.name]: target.value
             };
         });
-        updateRecord({ [target.name]: target.value });
     };
 
     return (
@@ -33,29 +35,29 @@ const Form = ({ handleAddRecord, editRecord, updateRecord }) => {
                 <input
                     type="date"
                     name="date"
-                    ref={date}
                     className="form__input"
                     placeholder="Ввести дату"
                     id="date"
-                    onChange={handleChange}
-                    value={field.date}
+                    ref={field1}
+                //onChange={handleChange}
+                //value={editRecord === null ? '' : editRecord.date}
                 ></input>
             </div>
             <div className="form__group">
                 <label htmlFor="number" className="form__label">Пройдено км</label>
                 <input
-                    onChange={handleChange}
+                    //onChange={handleChange}
                     type="number"
                     name="number"
-                    ref={number}
+                    ref={field2}
                     className="form__input"
                     placeholder="Ввести пройденное расстояние"
                     id="number"
-                    value={field.number}
+                //value={editRecord === null ? '' : editRecord.number}
                 ></input>
-            </div>
+            </div >
             <input type="submit" className="form__submit" value="Ок" />
-        </form>
+        </form >
     );
 };
 

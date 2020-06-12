@@ -5,10 +5,7 @@ import './TrainingRecords.css';
 
 const TrainingRecords = () => {
     const [records, setRecords] = useState([]);
-    const [editRecord, setEditRecord] = useState({
-        date: '',
-        number: 0
-    });
+    const [editRecord, setEditRecord] = useState(null);
 
     const handleAddRecord = ({ date, number }) => {
         const dateRev = date.split('.').reverse().join('.');
@@ -44,6 +41,7 @@ const TrainingRecords = () => {
     };
 
     const handleOption = (date, option) => {
+        console.log(date, option);
         switch (option) {
             case 'edit':
                 let position = -1;
@@ -53,8 +51,6 @@ const TrainingRecords = () => {
                         position = index;
                     }
                 });
-
-                console.log(2, records[position]);
 
                 setEditRecord(records[position]);
                 break;
